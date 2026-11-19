@@ -1,53 +1,6 @@
 
 const ADBLOCK = {
     blocked: [
-  "googlevideo.com/videoplayback",
-  "youtube.com/get_video_info",
-  "youtube.com/api/stats/ads",
-  "youtube.com/pagead",
-  "youtube.com/api/stats",
-  "youtube.com/get_midroll",
-  "youtube.com/ptracking",
-  "youtube.com/youtubei/v1/player",
-  "youtube.com/s/player",
-  "youtube.com/api/timedtext",
-  "facebook.com/ads",
-  "facebook.com/tr",
-  "fbcdn.net/ads",
-  "graph.facebook.com/ads",
-  "graph.facebook.com/pixel",
-  "ads-api.twitter.com",
-  "analytics.twitter.com",
-  "twitter.com/i/ads",
-  "ads.yahoo.com",
-  "advertising.com",
-  "adtechus.com",
-  "amazon-adsystem.com",
-  "adnxs.com",
-  "doubleclick.net",
-  "googlesyndication.com",
-  "googleadservices.com",
-  "rubiconproject.com",
-  "pubmatic.com",
-  "criteo.com",
-  "openx.net",
-  "taboola.com",
-  "outbrain.com",
-  "moatads.com",
-  "casalemedia.com",
-  "unityads.unity3d.com",
-  "/ads/",
-  "/adserver/",
-  "/banner/",
-  "/promo/",
-  "/tracking/",
-  "/beacon/",
-  "/metrics/",
-  "adsafeprotected.com",
-  "chartbeat.com",
-  "scorecardresearch.com",
-  "quantserve.com",
-  "krxd.net",
   "demdex.net"
 ]   
 };
@@ -264,7 +217,7 @@ scramjet.addEventListener("request", async (e) => {
 
         if (!scramjet.client) {
             const connection = new BareMux.BareMuxConnection(basePath + "bareworker.js");
-            await connection.setTransport("https://cdn.jsdelivr.net/npm/@mercuryworkshop/epoxy-transport@2.1.28/dist/index.mjs", [{ wisp: wispConfig.wispurl }]);
+            await connection.setTransport("https://cdn.jsdelivr.net/npm/@mercuryworkshop/libcurl-transport@1.5.2/dist/index.mjs", [{ wisp: wispConfig.wispurl }]);
             scramjet.client = connection;
         }
 
