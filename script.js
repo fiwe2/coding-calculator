@@ -190,10 +190,10 @@ async function getSharedConnection() {
     const wispUrl = localStorage.getItem("proxServer") ?? DEFAULT_WISP;
     
     sharedConnection = new BareMux.BareMuxConnection(basePath + "bareworker.js");
-    await sharedConnection.setTransport(
-        "https://cdn.jsdelivr.net/npm/@mercuryworkshop/epoxy-transport@2.1.28/dist/index.mjs",
-        [{ wisp: wispUrl }]
-    );
+await sharedConnection.setTransport(
+    "https://cdn.jsdelivr.net/npm/@mercuryworkshop/libcurl-transport@1.5.2/dist/index.mjs",
+    [{ wisp: wispUrl }]
+);
     sharedConnectionReady = true;
     return sharedConnection;
 }
